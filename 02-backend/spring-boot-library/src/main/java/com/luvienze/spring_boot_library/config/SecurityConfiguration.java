@@ -9,6 +9,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.accept.ContentNegotiationStrategy;
 import org.springframework.web.accept.HeaderContentNegotiationStrategy;
 
+
 @Configuration
 public class SecurityConfiguration {
 
@@ -22,7 +23,9 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests(configurer ->
                 configurer
                         .requestMatchers("/api/books/secure/**")
-                        .authenticated())
+                        .authenticated()
+                        .anyRequest().permitAll())
+
         .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(Customizer.withDefaults()));
 
 
