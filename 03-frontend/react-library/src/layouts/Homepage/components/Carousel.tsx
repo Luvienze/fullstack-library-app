@@ -41,7 +41,6 @@ export const Carousel = () => {
                     category: responseData[key].category,
                     img: responseData[key].img,
                 });
-                console.log(loadedBooks);
             }
             setBooks(loadedBooks);
             setIsLoading(false);
