@@ -23,7 +23,7 @@ export const App = () => {
 
   const restoreOriginalUri = async (_oktaAuth: any, originalUri: any) => {
     history.replace(toRelativeUrl(originalUri || '/', window.location.origin));
-  }
+  };
 
   return (
     <div className='d-flex flex-column min-vh-100'>
@@ -49,9 +49,11 @@ export const App = () => {
               <BookCheckoutPage />
             </Route>
 
-            <Route path='/login' render={() => <LoginWidget config={oktaConfig} />}></Route>
-
-            <Route path='login/callback' component={LoginCallback}></Route>
+            <Route path='/login' render={
+              () => <LoginWidget config={oktaConfig} />
+            }
+            />
+            <Route path='/login/callback' component={LoginCallback} />
           </Switch>
 
         </div>

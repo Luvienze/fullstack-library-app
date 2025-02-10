@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.PUT})
 public interface CheckoutRepository extends JpaRepository<Checkout, Long> {
 
     Checkout findByUserEmailAndBookId(String userEmail, Long bookId);

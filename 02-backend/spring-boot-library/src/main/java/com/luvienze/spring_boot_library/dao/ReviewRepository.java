@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@CrossOrigin(origins = "http://localhost:3000", methods = RequestMethod.GET)
+@CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.PUT})
 public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     Page<Review> findBookById(@RequestParam("book_id") Long bookId, Pageable pageable);
